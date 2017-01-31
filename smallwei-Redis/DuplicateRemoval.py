@@ -1,10 +1,11 @@
 import threading
-from Message import *
-import time
-import Queue
 import traceback
-from DatabaseSession import *
+
 from sqlalchemy import desc
+
+from DatabaseSession import *
+from Message import *
+from Queue import Queue
 
 mutex = threading.Lock()
 

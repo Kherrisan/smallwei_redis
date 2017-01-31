@@ -1,21 +1,14 @@
 # -*- coding:utf-8 -*-
 
-import threading
-import DatabaseSession
-from Message import *
-from RedisSession import *
-from BaseProcessModule import BaseProcessModule
-
 from sqlalchemy import *
-from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
-import random
-import datetime
-from DatabaseSession import Session
-import traceback
-from GetInfoFromIni import *
+from RedisSession import *
+
 import renderBlessing
-from config import *
+from BaseProcessModule import *
+from DatabaseSession import Session
+from GetInfoFromIni import *
+from Message import *
+from Sender import *
 
 Base = declarative_base()
 redisConnection = redis.Redis(connection_pool=redisPool)
@@ -47,10 +40,10 @@ class ReceiveBlessingModule(BaseProcessModule):
                 bless = message.getContent()
                 if len(bless.encode("gbk")) < 8:
                     message.setContent(u"祝福太短了哦。")
-                    return message, True, True
+                    send(message,True)
                 elif len(bless.encode("gbk")) > 68:
                     message.setContent(u"祝福太长了哦，小微记不住了呢。。。")
-                    return message, True, True
+                    send(message, True)
                 else:
                     blessModule = BlessingModal(content=message.getContent()[1:],
                                                 fromqq=message.getPersonQQ())
@@ -67,13 +60,15 @@ class ReceiveBlessingModule(BaseProcessModule):
                     else:
                         message.setContent(
                             u"您的祝福已经收集！请等待不久后来自陌生人的祝福哦~")
-                    return message, True, True
+                        send(message, True)
             else:
-                return 0, False, False
+                return
         except Exception as e:
-            print "[" + NewyearModule.name + "][info]" + e.message
+            if isinstance(e,Block):
+                raise Block()
+            print "[" + ReceiveBlessingModule.name + "][error]" + e.message
             traceback.print_exc()
-            return 0, False, False
+            return
         finally:
             session.close()
 
@@ -120,14 +115,16 @@ class SendBlessingModule(BaseProcessModule):
                                                                                 SendBlessingModule.BLESSING_TITLE,
                                                                                 SendBlessingModule.BLESSING_CONTENT,
                                                                                 SendBlessingModule.BLESSING_LOGO))
-                    return message, True, True
+                    send(message,True)
                 else:
-                    return 0, False, False
+                    return
             else:
-                return 0, False, False
+                return
         except Exception as e:
-            print "[" + SendBlessingModule.name + "][info]" + e.message
+            if isinstance(e,Block):
+                raise Block()
+            print "[" + SendBlessingModule.name + "][error]" + e.message
             traceback.print_exc()
-            return 0, False, False
+            return
         finally:
             session.close()

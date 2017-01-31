@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 # 图灵机器人的模块。
 
-import requests
 import json
-from BaseProcessModule import *
 import re
-import Message
 
+import requests
+
+import Message
 from config import TURING_API_URL, TURING_KEY
+from BaseProcessModule import *
+from Sender import *
 
 
 class TuringRobotModule(BaseProcessModule):
@@ -23,7 +25,7 @@ class TuringRobotModule(BaseProcessModule):
                      "uesrid": message.getPersonQQ()}))
                 message.setContent(json.loads(rtn.text)["text"])
                 print "[" + TuringRobotModule.name + "][info]" + message.getJsonStr()
-                return message, True, True
+                send(message, True)
             elif message.getSubType() == 2 or message.getSubType() == 3:  # 如果是群或讨论组消息，则只通过图灵机器人回应at小微的消息。
                 res = re.search(r"^\[CQ:at,qq=([0-9]+)\]", message.getContent())
                 if res and (res.group(1) == str(SMALLWEI_QQ) or res.group(1)==str(SMALLWEI2016_QQ)):
@@ -33,18 +35,20 @@ class TuringRobotModule(BaseProcessModule):
                     message.setContent("[CQ:at,qq={0}]".format(message.getPersonQQ()) + json.loads(rtn.text)["text"])
                     message.setTargetQQ(int(res.group(1)))
                     print "[" + TuringRobotModule.name + "][info]" + message.getJsonStr()
-                    return message, True, True
+                    send(message, True)
                 else:
-                    return 0, False, False
+                    return
         except Exception as e:
+            if isinstance(e,Block):
+                raise Block()
             print "[" + TuringRobotModule.name + "][error]" + e.message
             traceback.print_exc()
-            return 0, False, False
+            return
 
 
 if __name__ == "__main__":
     msg=Message.Message()
-    msg.setContent("你好");
+    msg.setContent("你好")
     msg.setPersonQQ(459861669)
     msg.setSendTime(100000000)
 

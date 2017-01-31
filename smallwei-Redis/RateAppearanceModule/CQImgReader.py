@@ -28,9 +28,7 @@ class CQImgReader:
         img_bytes = cStringIO.StringIO(urllib2.urlopen(self.url).read())
         return Image.open(img_bytes)
 
-
-if __name__ == "__main__":
-    img = CQImgReader(
-        u"D:\Document\SmallWei\[Dev] 酷Q Air [正式版]\酷Q Air\data\image\C321ADD56FF4D1E92B1CA1F9BD4A767D.jpg.cqimg")
-    img = img.get_pil_img()
+if __name__=="__main__":
+    img=CQImgReader(u"D:\Document\SmallWei\[Dev] 酷Q Air [正式版]\酷Q Air\data\image\C321ADD56FF4D1E92B1CA1F9BD4A767D.jpg.cqimg")
+    img=img.get_pil_img()
     img.show()

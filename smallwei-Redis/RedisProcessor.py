@@ -3,14 +3,12 @@
 
 
 import threading
-from ModuleList import ProcessList
-from RemoteTerminalModule import *
-from Message import *
-from DuplicateRemoval import DuplicateRemoval
 import traceback
+# from RemoteTerminalModule import *
 from RedisSession import *
+from DuplicateRemoval import DuplicateRemoval
+from Message import *
 from config import *
-
 
 
 # 该函数判断该模块是否被启动，在运行中。
@@ -26,21 +24,6 @@ def run_flag_wrapper(module, message):
         return module.process(message)
     else:
         return 0, False, False
-
-
-def switchoutqueue(qq):
-    """
-
-    :param qq: 根据message对象的targetQQ判断在py到cq的过程中，应该选择哪条队列。大微和小微2016的qq号在config中定义。
-    :return: 队列名称，在config中定义。
-    """
-    print "SWITCHINGINGINGING    "+str(qq)
-    if qq == SMALLWEI_QQ:
-        return REDIS_OUT_QUEUE_NAME_BIG
-    elif qq == SMALLWEI2016_QQ:
-        return REDIS_OUT_QUEUE_NAME_2016
-    else:
-        return ""
 
 
 class Precessor(threading.Thread):
@@ -77,14 +60,8 @@ class Precessor(threading.Thread):
                     if not DuplicateRemoval.check_depulicate(message):
                         for itrProcessor in ProcessList.processList:  # 遍历模块列表中的每个模块，把message对象传进去。
                             rtnmessage, sendFlag, blockFlag = run_flag_wrapper(itrProcessor, message)
-                            if sendFlag:
-                                print "[send]" + rtnmessage.getJsonStr()
-                                self.redisConnection.rpush(switchoutqueue(rtnmessage.getTargetQQ()), rtnmessage.getDataStream())
-                            if blockFlag:  # 如果这个模块要求后面的模块不处理这条message。
-                                break
             except Exception as e:
-                self.isError = True
-                traceback.print_exc()
+                pass
 
 
 if __name__ == "__main__":

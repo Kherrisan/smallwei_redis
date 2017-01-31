@@ -4,8 +4,9 @@
 
 # 命令格式为"@微[命令]:[模块名称]"不包含中括号。
 
-from BaseProcessModule import BaseProcessModule
 from ModuleList import *
+from BaseProcessModule import *
+from Sender import *
 
 
 class RemoteTerminalModule(BaseProcessModule):
@@ -20,11 +21,14 @@ class RemoteTerminalModule(BaseProcessModule):
                 call, arg = globals()[tempList[0]](), globals()[tempList[1]]  # 这一行是坠吼的，用到了反射。
                 if call(arg):
                     print "[" + RemoteTerminalModule.name + "][info]" + content
-                    return message.setContent("[" + call.name + "]" + arg.name), True, True
+                    message.setContent("[" + call.name + "]" + arg.name)
+                    send(message, True)
         except TypeError as e:
+            if isinstance(e,Block):
+                raise Block()
             print "[" + RemoteTerminalModule.name + "][error]" + e.message
             traceback.print_exc()
-            return 0, False, False
+            return
 
 
 class restart:

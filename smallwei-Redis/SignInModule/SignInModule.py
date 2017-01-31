@@ -2,16 +2,17 @@
 # 签到模块。
 # 目前还没有什么乱用。
 
-from BaseProcessModule import BaseProcessModule
+import datetime
+import random
+from datetime import datetime
+
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
-import random
-import datetime
-from DatabaseSession import Session
-import traceback
 
+from BaseProcessModule import *
+from DatabaseSession import Session
 from config import *
+from Sender import *
 
 Base = declarative_base()
 
@@ -141,7 +142,7 @@ class SignInModule(BaseProcessModule):
                     print "[signin]--TimeWrong" + str(message.getPersonQQ())
                     reply = SignInModule.getAt(message) + u"【签到失败】\n只能在6-9点之间签到哦。"
                     message.setContent(reply)
-                    return message, True, True
+                    send(message, True)
                 elif SignInModule.inSuitableTime() == 1:
                     scoreType = 1
                 else:
@@ -155,7 +156,7 @@ class SignInModule(BaseProcessModule):
                     if query.last_Date == SignInModule.getToday():
                         reply = SignInModule.getAt(message) + u"您今天已经签到过了，明天再来试试吧!"
                         message.setContent(reply)
-                        return message, True, True
+                        send(message, True)
                     else:
                         addedScore = SignInModule.getSuitableScore(query.ctnSignIn, scoreType=scoreType)
                         record = SignInRecordModal(
@@ -190,25 +191,27 @@ class SignInModule(BaseProcessModule):
                                                                      SignInModule.USER_LOGO.format(message.getPersonQQ()))
                     # 返回内容
                     message.setContent(reply)
-                    return message, True, False
+                    send(message, True)
                 else:  # 如果此人之前未签过到，即数据库无此用户
                     print "[signin]--unRegister--" + str(message.getPersonQQ())
                     reply = SignInModule.getAt(message) + u"您尚未注册，输入[注册 昵称]即可注册，例: 注册 李云龙 "
                     message.setContent(reply)
-                    return message, True, True
+                    send(message, True)
             elif SignInModule.isRank(msg):
                 newContent=u"签到排行榜："
                 query=session.query(SignInUserModal).order_by(desc(SignInUserModal.totalScore)).limit(6).all()
                 for iq in range(0,len(query)):
-                    newContent+=u"\n{0}.{1}:{2}分".format(iq,query[iq].nickname,query[iq].totalScore)
+                    newContent+=u"\n{:<1}.{:<6}({:<10}):{:<4}分".format(iq,query[iq].nickName,query[iq].personQQ,query[iq].totalScore)
                 message.setContent(SignInModule.getAt(message)+newContent)
-                return message,True,True
+                send(message, True)
             else:
-                return 0, False, False
+                return
         except Exception as e:  #
+            if isinstance(e,Block):
+                raise Block()
             print "[" + SignInModule.name + "][error]" + e.message
             traceback.print_exc()
-            return 0, False, False
+            return
         finally:
             session.close()
 
@@ -238,7 +241,7 @@ class RegisterModule(BaseProcessModule):
                 if query:
                     reply = SignInModule.getAt(message) + u"你已经注册过了啦\n现在回复“签”试一下吧~"
                     message.setContent(reply)
-                    return message, True, True
+                    send(message, True)
                 personQQ = message.getPersonQQ()
                 nickName = msg.split(' ')[1]
                 totalSignIn = 0
@@ -259,13 +262,14 @@ class RegisterModule(BaseProcessModule):
                 session.commit()
                 reply = SignInModule.getAt(message) + u"注册成功!\n现在回复“签”试一下吧~"
                 message.setContent(reply)
-                return message, True, True
+                send(message, True)
             else:
-                return 0, False, False
+                return
         except Exception as e:
-            #
+            if isinstance(e,Block):
+                raise Block()
             print "[" + RegisterModule.name + "][error]" + e.message
             traceback.print_exc()
-            return 0, False, False
+            return
         finally:
             session.close()

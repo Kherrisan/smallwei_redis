@@ -1,10 +1,9 @@
 # -*- coding:utf-8 -*-
 # 一卡通绑定模块
 
-from BaseProcessModule import *
 from GetInfoFromIni import *
-from Message import *
-
+from BaseProcessModule import *
+from Sender import *
 
 class BindCardModule(BaseProcessModule):
     '''绑定信息模块
@@ -28,16 +27,18 @@ class BindCardModule(BaseProcessModule):
                     #判断当前一卡通是否在all_info.txt内
                     if insertinfo(fromQQ,msg):
                         message.setContent(u"绑定成功！")
-                        return message , True, True
+                        send(message,True)
                     else:
                         message.setContent(u"请检查您的一卡通账号！")
-                        return message , True, True
+                        send(message, True)
                 else:
                     message.setContent(u"您已注册！")
-                    return message , True, True
+                    send(message, True)
             else:
-                return 0, False, False
+                return
         except Exception as e:
-            print "[" + BindCardModule.name + "][info]" + e.message
+            if isinstance(e,Block):
+                raise Block()
+            print "[" + BindCardModule.name + "][error]" + e.message
             traceback.print_exc()
-            return 0, False, False
+            return
