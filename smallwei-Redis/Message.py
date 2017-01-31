@@ -2,6 +2,7 @@
 # 极其重要的核心类。定义了Message类和MessageModel类。
 
 import json
+import copy
 from sqlalchemy import Column, Integer, String, Text, BigInteger
 from sqlalchemy.orm import *
 from sqlalchemy.ext.declarative import declarative_base
@@ -42,10 +43,16 @@ class Message:
 
     """
 
-    def __init__(self):
+    def __init__(self, dic=None):
         self.msgDict = dict()
         self.msgDict["source"] = dict()
-        self.setSendTime(0).setSubType(0).setContent("").setPersonQQ(0).setDiscussionQQ(0).setGroupQQ(0)
+        if dic is None:
+            self.setSendTime(0).setSubType(0).setContent("").setPersonQQ(0).setDiscussionQQ(0).setGroupQQ(0)
+        else:
+            self.msgDict=copy.copy(dic)
+
+    def __getitem__(self, item):
+        return Message(self.msgDict)
 
     def setDict(self, dic):
         self.msgDict = dic
@@ -65,7 +72,7 @@ class Message:
         return self.msgDict["msg"]
 
     def setContent(self, value):
-        self.msgDict["msg"] = value
+        self.msgDict["msg"] = value[:]
         return self
 
     def getSubType(self):
@@ -106,11 +113,11 @@ class Message:
     def getTargetQQ(self):
         return self.msgDict["targetQQ"]
 
-    def setTargetQQ(self,target):
-        self.msgDict["targetQQ"]=target
+    def setTargetQQ(self, target):
+        self.msgDict["targetQQ"] = target
 
     @staticmethod
-    def  produceMessege(dataStream):
+    def produceMessege(dataStream):
         """
         将任务字符串转成一个Message对象的函数。
         :param dataStream: 从redis中取出的原始字符串。

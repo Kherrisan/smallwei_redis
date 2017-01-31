@@ -2,9 +2,10 @@
 # 聊天记录的记录模块。
 
 from BaseProcessModule import *
-from DatabaseSession import Session
 from Message import *
+from DatabaseSession import Session
 from Sender import *
+
 
 class MessageStoreDBModule(BaseProcessModule):
     """该模块将所有小微可见的消息都写进数据库中。

@@ -24,7 +24,7 @@ class RateAppearanceModule(BaseProcessModule):
     RANK_URL = "http://kan.msxiaobing.com/Api/ImageAnalyze/Process?service=yanzhi"
     _RANK_URL = "http://kan.msxiaobing.com/Api/ImageAnalyze/Process?service=yanzhi&tid=4a3de9b27e5b4624b35a941669fdc57c"
 
-    name = "UploadImageModule"
+    name = "RateAppearanceModule"
 
     @staticmethod
     def is_rate_appearance(message):
@@ -46,18 +46,18 @@ class RateAppearanceModule(BaseProcessModule):
 
     @staticmethod
     def process(message):
-        print "[" + RateAppearanceModule.name + "]"
         try:
             context = redisConnection.hget(REDIS_CONTEXT_CACHE_HASH_NAME, message.getPersonQQ())
             if message.getSubType() == 1 and RateAppearanceModule.is_rate_appearance(message):
+                print "[" + RateAppearanceModule.name + "]"
                 redisConnection.hset(REDIS_CONTEXT_CACHE_HASH_NAME, message.getPersonQQ(), RateAppearanceModule.CONTEXT)
                 message.setContent(u"测颜值是吧，直接发图片給微微好啦~")
                 send(message, True)
             elif message.getSubType() == 1 and RateAppearanceModule.is_picture(
                     message) and context == RateAppearanceModule.CONTEXT:
+                message.setContent(u"微微正在识别中。。。。。。")
+                send(message, False)
                 name = re.search(RateAppearanceModule.PICTURE_PATTERN, message.getContent()).group(1)
-                print name
-                print RateAppearanceModule.COOLQ_IMAGE_PATH.format(message.getTargetQQ()) + name + ".cqimg"
                 buffer = cStringIO.StringIO()
                 CQImgReader.CQImgReader(
                     RateAppearanceModule.COOLQ_IMAGE_PATH.format(
@@ -69,7 +69,6 @@ class RateAppearanceModule(BaseProcessModule):
                                          {"Content[imageUrl]": args["Host"] + args["Url"]})
                 args = json.loads(response.text)
                 redisConnection.hdel(REDIS_CONTEXT_CACHE_HASH_NAME, message.getPersonQQ())
-                print args
                 message.setContent(args["content"]["text"])
                 send(message, True)
             else:

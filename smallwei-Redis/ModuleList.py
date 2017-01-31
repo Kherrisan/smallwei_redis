@@ -2,12 +2,12 @@
 # 模块列表类，需要包含所有的模块。
 # 这个文件需要被RedisProcessor类包含。
 
-from BindCardModule import BindCardModule
-from MessageStoreDBModule import MessageStoreDBModule
-from NewYearBlessing import SendBlessingModule, ReceiveBlessingModule
-from RateAppearanceModule import RateAppearanceModule
-from SignInModule import SignInModule, RegisterModule
-from TuringRobotModule import TuringRobotModule
+from BindCardModule.BindCardModule import BindCardModule
+from MessageStoreDBModule.MessageStoreDBModule import MessageStoreDBModule
+from NewYearBlessing.NewYearBlessing import SendBlessingModule, ReceiveBlessingModule
+from RateAppearanceModule.RateAppearanceModule import RateAppearanceModule
+from SignInModule.SignInModule import SignInModule, RegisterModule
+from TuringRobotModule.TuringRobotModule import TuringRobotModule
 
 
 class ProcessList:

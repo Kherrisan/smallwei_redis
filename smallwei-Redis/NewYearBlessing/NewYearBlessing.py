@@ -1,13 +1,12 @@
 # -*- coding:utf-8 -*-
 
 from sqlalchemy import *
-from RedisSession import *
 
 import renderBlessing
 from BaseProcessModule import *
-from DatabaseSession import Session
 from GetInfoFromIni import *
 from Message import *
+from DatabaseSession import Session
 from Sender import *
 
 Base = declarative_base()

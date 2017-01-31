@@ -4,14 +4,12 @@
 
 import datetime
 import random
-from datetime import datetime
 
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 
 from BaseProcessModule import *
 from DatabaseSession import Session
-from config import *
 from Sender import *
 
 Base = declarative_base()

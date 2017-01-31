@@ -1,11 +1,6 @@
 import threading
-import traceback
-
-from sqlalchemy import desc
-
-from DatabaseSession import *
 from Message import *
-from Queue import Queue
+import time
 
 mutex = threading.Lock()
 
@@ -15,28 +10,32 @@ class DuplicateRemoval:
 
     @staticmethod
     def check_depulicate(message):
-        # if len(DuplicateRemoval.messagelist)>0 and time.time()-DuplicateRemoval.messagelist[0].getSendTime()>10:
-        #     del DuplicateRemoval.messagelist[0]
-        # for i in range(0,len(DuplicateRemoval.messagelist)):
-        #     if message.getContent()==DuplicateRemoval.messagelist[i].getContent() and message.getPersonQQ()==DuplicateRemoval.messagelist[i].getPersonQQ() and message.getSubType()==DuplicateRemoval.messagelist[i].getSubType():
-        #         del DuplicateRemoval.messagelist[i]
-        #         return True
-        # DuplicateRemoval.messagelist.append(message)
-        # return False
-        session = Session()
-        try:
-            query = session.query(MessageModel).filter(MessageModel.content == message.getContent(),
-                                                       MessageModel.personQQ == message.getPersonQQ(),
-                                                       MessageModel.groupQQ == message.getGroupQQ(),
-                                                       MessageModel.subType == message.getSubType()).order_by(desc(MessageModel.sendTime)).first()
-            if query and message.getSendTime() - query.sendTime < 3:
+        mutex.acquire()
+        msg=message[:]
+        if len(DuplicateRemoval.messagelist)>0 and time.time()-DuplicateRemoval.messagelist[0].getSendTime()>10:
+            del DuplicateRemoval.messagelist[0]
+        for i in range(0,len(DuplicateRemoval.messagelist)):
+            if msg.getContent()==DuplicateRemoval.messagelist[i].getContent() and msg.getPersonQQ()==DuplicateRemoval.messagelist[i].getPersonQQ() and msg.getSubType()==DuplicateRemoval.messagelist[i].getSubType():
+                del DuplicateRemoval.messagelist[i]
+                mutex.release()
                 return True
-            else:
-                return False
-        except Exception as e:
-            traceback.print_exc()
-        finally:
-            session.close()
+        DuplicateRemoval.messagelist.append(msg)
+        mutex.release()
+        return False
+        # session = Session()
+        # try:
+        #     query = session.query(MessageModel).filter(MessageModel.content == message.getContent(),
+        #                                                MessageModel.personQQ == message.getPersonQQ(),
+        #                                                MessageModel.groupQQ == message.getGroupQQ(),
+        #                                                MessageModel.subType == message.getSubType()).order_by(desc(MessageModel.sendTime)).first()
+        #     if query and message.getSendTime() - query.sendTime < 3:
+        #         return True
+        #     else:
+        #         return False
+        # except Exception as e:
+        #     traceback.print_exc()
+        # finally:
+        #     session.close()
 
 # class DuplicateRemovalTimer(threading.Thread):
 #     def __init__(self):

@@ -9,6 +9,7 @@ from RedisSession import *
 from DuplicateRemoval import DuplicateRemoval
 from Message import *
 from config import *
+from ModuleList import ProcessList
 
 
 # 该函数判断该模块是否被启动，在运行中。
@@ -23,7 +24,7 @@ def run_flag_wrapper(module, message):
     if module.check(message.getTargetQQ()):
         return module.process(message)
     else:
-        return 0, False, False
+        return
 
 
 class Precessor(threading.Thread):
@@ -49,9 +50,9 @@ class Precessor(threading.Thread):
         如果出现了异常，如redis的blpop和rpush异常，则返回，停止该线程的运行。其他的在模块中发生的异常应有模块捕获，不能传播到这个函数体中。
         :return:
         """
+        print "[start]" + self.name
         while True:
             try:
-                print "[start]" + self.name
                 while self.runFlag:
                     print "[waiting]"
                     dataStream = self.redisConnection.blpop(REDIS_IN_QUEUE_NAME)
@@ -59,17 +60,24 @@ class Precessor(threading.Thread):
                     message = Message.produceMessege(dataStream)  # 将原始字符串转换成message对象。
                     if not DuplicateRemoval.check_depulicate(message):
                         for itrProcessor in ProcessList.processList:  # 遍历模块列表中的每个模块，把message对象传进去。
-                            rtnmessage, sendFlag, blockFlag = run_flag_wrapper(itrProcessor, message)
+                            run_flag_wrapper(itrProcessor, message)
             except Exception as e:
                 pass
 
 
 if __name__ == "__main__":
     # 在测试阶段，默认启动所有的模块。
-    for i in ProcessList.processList:
-        i.start(SMALLWEI2016_QQ)
-        i.start(SMALLWEI_QQ)
-    p = Precessor("ppp")
-    p.start()
-    while True:
+    try:
+        for i in ProcessList.processList:
+            i.start(SMALLWEI2016_QQ)
+            i.start(SMALLWEI_QQ)
+
+        for i in range(0, MAX_THREAD_NUM):
+            p = Precessor("thread" + str(i))
+            p.start()
+
+        while True:
+            pass
+    except KeyboardInterrupt as e:
+        print "exit...ByeBye........."
         pass
