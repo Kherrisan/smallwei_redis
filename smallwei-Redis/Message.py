@@ -2,6 +2,7 @@
 # 极其重要的核心类。定义了Message类和MessageModel类。
 
 import json
+import re
 import copy
 from sqlalchemy import Column, Integer, String, Text, BigInteger
 from sqlalchemy.orm import *
@@ -44,15 +45,18 @@ class Message:
     """
 
     def __init__(self, dic=None):
+        self.at = False
         self.msgDict = dict()
         self.msgDict["source"] = dict()
         if dic is None:
             self.setSendTime(0).setSubType(0).setContent("").setPersonQQ(0).setDiscussionQQ(0).setGroupQQ(0)
         else:
-            self.msgDict=copy.copy(dic)
+            self.msgDict = copy.copy(dic)
 
     def __getitem__(self, item):
-        return Message(self.msgDict)
+        msg = Message(self.msgDict)
+        msg.at = self.at
+        return msg
 
     def setDict(self, dic):
         self.msgDict = dic
@@ -115,6 +119,33 @@ class Message:
 
     def setTargetQQ(self, target):
         self.msgDict["targetQQ"] = target
+
+    def is_at(self):
+        return self.at
+
+    def remove_group_at(self):
+        GROUP_AT_PATTERN = r"^\[CQ:at,qq=([0-9]+)\]"
+        res = re.search(GROUP_AT_PATTERN, self.getContent())
+        if res and res.group(1) == str(self.getTargetQQ()):
+            self.setContent(self.getContent()[len(res.group(0)):])
+            self.at = True
+        else:
+            self.at = False
+
+    def group_at(self, atQQ=None):
+        GROUP_AT_CQ = "[CQ:at,qq={0}]"
+        if atQQ:
+            self.setContent(GROUP_AT_CQ.format(atQQ) + self.getContent())
+        else:
+            self.setContent(GROUP_AT_CQ.format(self.getPersonQQ()) + self.getContent())
+
+    def get_context_str(self):
+        if self.getSubType() == 1:
+            return str(self.getPersonQQ())
+        elif self.getSubType() == 2:
+            return str(self.getGroupQQ()) + str(self.getPersonQQ())
+        else:
+            return str(self.getDiscussionQQ()) + str(self.getPersonQQ())
 
     @staticmethod
     def produceMessege(dataStream):
