@@ -11,6 +11,8 @@ from Message import *
 from config import *
 from ModuleList import ProcessList
 
+redisConn=redis.Redis(connection_pool=redisPool)
+
 
 # 该函数判断该模块是否被启动，在运行中。
 def run_flag_wrapper(module, message):
@@ -56,7 +58,7 @@ class Precessor(threading.Thread):
                 while self.runFlag:
                     print "[waiting]"
                     dataStream = self.redisConnection.blpop(REDIS_IN_QUEUE_NAME)
-                    print "[received]" + dataStream[1][:-1].decode("gbk")
+                    print "["+self.name+"][received]" + dataStream[1][:-1].decode("gbk")
                     message = Message.produceMessege(dataStream)  # 将原始字符串转换成message对象。
                     if not DuplicateRemoval.check_depulicate(message):
                         for itrProcessor in ProcessList.processList:  # 遍历模块列表中的每个模块，把message对象传进去。

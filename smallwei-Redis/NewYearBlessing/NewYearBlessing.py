@@ -36,6 +36,7 @@ class ReceiveBlessingModule(BaseProcessModule):
         session = Session()
         try:
             if message.getSubType() == 1 and ReceiveBlessingModule.isBless(message):
+                print "[" + ReceiveBlessingModule.name + "]"
                 bless = message.getContent()
                 if len(bless.encode("gbk")) < 8:
                     message.setContent(u"祝福太短了哦。")
@@ -98,9 +99,10 @@ class SendBlessingModule(BaseProcessModule):
             if SendBlessingModule.checkTime():
                 waitqq = redisConnection.lpop(REDIS_BLESSING_WAITING_QUEUE)
                 if not waitqq:
-                    return 0,False,False
+                    return
                 blessQuery = session.query(BlessingModal).order_by(func.rand()).limit(1).first()
                 if blessQuery:
+                    print "[" + SendBlessingModule.name + "]"
                     renderblessing = renderBlessing.RenderBlessing(int(waitqq[1:]), blessQuery.fromqq, blessQuery.content)
                     url = renderblessing.render().get_url()
                     message = Message()

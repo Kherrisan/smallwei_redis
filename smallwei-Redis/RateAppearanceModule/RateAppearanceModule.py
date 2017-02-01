@@ -35,6 +35,7 @@ class RateAppearanceModule(BaseProcessModule):
 
     @staticmethod
     def is_picture(message):
+        print message.getContent()
         if re.search(RateAppearanceModule.PICTURE_PATTERN, message.getContent()):
             return True
         else:
@@ -55,13 +56,17 @@ class RateAppearanceModule(BaseProcessModule):
                 send(message, True)
             elif message.getSubType() == 1 and RateAppearanceModule.is_picture(
                     message) and context == RateAppearanceModule.CONTEXT:
+		msg=message[:]
                 message.setContent(u"微微正在识别中。。。。。。")
                 send(message, False)
-                name = re.search(RateAppearanceModule.PICTURE_PATTERN, message.getContent()).group(1)
+                print "sending finished......"
+                name = re.search(RateAppearanceModule.PICTURE_PATTERN, msg.getContent()).group(1)
                 buffer = cStringIO.StringIO()
-                CQImgReader.CQImgReader(
+                img=CQImgReader.CQImgReader(
                     RateAppearanceModule.COOLQ_IMAGE_PATH.format(
-                        message.getTargetQQ()) + name + ".cqimg").get_pil_img().save(
+                        msg.getTargetQQ()) + name + ".cqimg").get_pil_img()
+                img.save("data\\"+str(message.getSendTime())+".jpg")
+                img.save(
                     buffer, format="JPEG")
                 response = requests.post(RateAppearanceModule.UPLOAD_URL, base64.b64encode(buffer.getvalue()))
                 args = json.loads(response.text)
@@ -69,8 +74,8 @@ class RateAppearanceModule(BaseProcessModule):
                                          {"Content[imageUrl]": args["Host"] + args["Url"]})
                 args = json.loads(response.text)
                 redisConnection.hdel(REDIS_CONTEXT_CACHE_HASH_NAME, message.getPersonQQ())
-                message.setContent(args["content"]["text"])
-                send(message, True)
+                msg.setContent(args["content"]["text"])
+                send(msg, True)
             else:
                 return
         except Exception as e:
