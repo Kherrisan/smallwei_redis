@@ -5,6 +5,7 @@ from BaseProcessModule import *
 from Message import *
 from DatabaseSession import Session
 from Sender import *
+from Logger import log
 
 
 class MessageStoreDBModule(BaseProcessModule):
@@ -18,14 +19,13 @@ class MessageStoreDBModule(BaseProcessModule):
         session = Session()
         try:
             session.add(Message.produceDBMessage(message))  # 根据Message对象生成MessageModel对象，并写入数据库中。
-            print "[" + MessageStoreDBModule.name + "][info]" + message.getJsonStr()
+            log(moduleName=MessageStoreDBModule.name,content=message.getContent()+" "+str(message.getGroupQQ())+" "+str(message.getPersonQQ()))
             session.commit()  # 数据库实际上发生变化是在这一行之后。相当于提交了插入操作。
             return
         except Exception as e:
             if isinstance(e,Block):
                 raise Block()
-            print "[" + MessageStoreDBModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(moduleName=MessageStoreDBModule.name,level="error",content=e.message)
             return
         finally:
             session.close()

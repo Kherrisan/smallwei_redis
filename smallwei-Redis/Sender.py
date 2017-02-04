@@ -2,6 +2,7 @@
 from RedisSession import *
 import redis
 from config import *
+from Logger import log
 
 redisConnection = redis.Redis(connection_pool=redisPool)
 
@@ -25,7 +26,7 @@ class Block(Exception):
 
 
 def send(message, blocked):
-    print "[send]" + message.getJsonStr()
+    log(moduleName="Sender",content=message.getJsonStr())
     redisConnection.rpush(switchoutqueue(message.getTargetQQ()), message.getDataStream())
     if blocked:
         raise Block()

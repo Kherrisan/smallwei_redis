@@ -10,6 +10,7 @@ import Message
 from config import TURING_API_URL, TURING_KEY
 from BaseProcessModule import *
 from Sender import *
+from Logger import log
 
 
 class TuringRobotModule(BaseProcessModule):
@@ -24,7 +25,7 @@ class TuringRobotModule(BaseProcessModule):
                     {"key": TURING_KEY, "info": message.getContent(),
                      "uesrid": message.getPersonQQ()}))
                 message.setContent(json.loads(rtn.text)["text"])
-                print "[" + TuringRobotModule.name + "][info]" + message.getJsonStr()
+                log(moduleName=TuringRobotModule.name,content=str(message.getContent())+" "+str(message.getPersonQQ()))
                 send(message, True)
             elif message.getSubType() == 2 or message.getSubType() == 3:  # 如果是群或讨论组消息，则只通过图灵机器人回应at小微的消息。
                 res = re.search(r"^\[CQ:at,qq=([0-9]+)\]", message.getContent())
@@ -34,15 +35,14 @@ class TuringRobotModule(BaseProcessModule):
                          "uesrid": str(message.getGroupQQ())+str(message.getPersonQQ())}))
                     message.setContent("[CQ:at,qq={0}]".format(message.getPersonQQ()) + json.loads(rtn.text)["text"])
                     message.setTargetQQ(int(res.group(1)))
-                    print "[" + TuringRobotModule.name + "][info]" + message.getJsonStr()
+                    log(moduleName=TuringRobotModule.name,content=str(message.getContent())+" "+str(message.getGroupQQ())+" "+str(message.getPersonQQ()))
                     send(message, True)
                 else:
                     return
         except Exception as e:
             if isinstance(e,Block):
                 raise Block()
-            print "[" + TuringRobotModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(level="error",moduleName=TuringRobotModule.name,content=e.message)
             return
 
 

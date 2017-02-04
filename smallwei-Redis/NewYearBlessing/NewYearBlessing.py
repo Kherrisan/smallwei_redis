@@ -8,6 +8,7 @@ from GetInfoFromIni import *
 from Message import *
 from DatabaseSession import Session
 from Sender import *
+from Logger import log
 
 Base = declarative_base()
 redisConnection = redis.Redis(connection_pool=redisPool)
@@ -36,7 +37,7 @@ class ReceiveBlessingModule(BaseProcessModule):
         session = Session()
         try:
             if message.getSubType() == 1 and ReceiveBlessingModule.isBless(message):
-                print "[" + ReceiveBlessingModule.name + "]"
+                log(moduleName=ReceiveBlessingModule.name,content=message.getContent())
                 bless = message.getContent()
                 if len(bless.encode("gbk")) < 8:
                     message.setContent(u"祝福太短了哦。")
@@ -66,8 +67,7 @@ class ReceiveBlessingModule(BaseProcessModule):
         except Exception as e:
             if isinstance(e,Block):
                 raise Block()
-            print "[" + ReceiveBlessingModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(moduleName=ReceiveBlessingModule.name,level="error",content=e.message)
             return
         finally:
             session.close()
@@ -102,7 +102,7 @@ class SendBlessingModule(BaseProcessModule):
                     return
                 blessQuery = session.query(BlessingModal).order_by(func.rand()).limit(1).first()
                 if blessQuery:
-                    print "[" + SendBlessingModule.name + "]"
+                    log(moduleName=SendBlessingModule.name,content=message.getContent())
                     renderblessing = renderBlessing.RenderBlessing(int(waitqq[1:]), blessQuery.fromqq, blessQuery.content)
                     url = renderblessing.render().get_url()
                     message = Message()
@@ -124,8 +124,7 @@ class SendBlessingModule(BaseProcessModule):
         except Exception as e:
             if isinstance(e,Block):
                 raise Block()
-            print "[" + SendBlessingModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(moduleName=SendBlessingModule.name,level="error",content=e.message)
             return
         finally:
             session.close()

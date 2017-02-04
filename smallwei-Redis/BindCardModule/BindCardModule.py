@@ -4,6 +4,7 @@
 from GetInfoFromIni import *
 from BaseProcessModule import *
 from Sender import *
+from Logger import log
 
 class BindCardModule(BaseProcessModule):
     '''绑定信息模块
@@ -22,6 +23,7 @@ class BindCardModule(BaseProcessModule):
                 fromQQ = str(message.getPersonQQ())
                 #msg为一卡通账号
                 msg = temp[2:]
+                log(moduleName=BindCardModule.name,level="info",content=str(fromQQ)+" "+msg)
                 #判断当前QQ账号是否已经绑定过
                 if getinfo(fromQQ)[0] == 0:
                     #判断当前一卡通是否在all_info.txt内
@@ -39,6 +41,5 @@ class BindCardModule(BaseProcessModule):
         except Exception as e:
             if isinstance(e,Block):
                 raise Block()
-            print "[" + BindCardModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(moduleName=BindCardModule.name,level="error",content=e.message)
             return

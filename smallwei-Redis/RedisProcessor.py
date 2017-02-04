@@ -10,8 +10,9 @@ from DuplicateRemoval import DuplicateRemoval
 from Message import *
 from config import *
 from ModuleList import ProcessList
+from Logger import log
 
-redisConn=redis.Redis(connection_pool=redisPool)
+redisConn = redis.Redis(connection_pool=redisPool)
 
 
 # 该函数判断该模块是否被启动，在运行中。
@@ -52,13 +53,13 @@ class Precessor(threading.Thread):
         如果出现了异常，如redis的blpop和rpush异常，则返回，停止该线程的运行。其他的在模块中发生的异常应有模块捕获，不能传播到这个函数体中。
         :return:
         """
-        print "[start]" + self.name
+        log(moduleName="Thread",content="start")
         while True:
             try:
                 while self.runFlag:
-                    print "[waiting]"
+                    log(moduleName="Thread",content="waiting")
                     dataStream = self.redisConnection.blpop(REDIS_IN_QUEUE_NAME)
-                    print "["+self.name+"][received]" + dataStream[1][:-1].decode("gbk")
+                    log(moduleName="Thread",content=dataStream[1][:-1].decode("gbk"))
                     message = Message.produceMessege(dataStream)  # 将原始字符串转换成message对象。
                     if not DuplicateRemoval.check_depulicate(message):
                         for itrProcessor in ProcessList.processList:  # 遍历模块列表中的每个模块，把message对象传进去。
@@ -69,6 +70,7 @@ class Precessor(threading.Thread):
 
 if __name__ == "__main__":
     # 在测试阶段，默认启动所有的模块。
+    threadList = []
     try:
         for i in ProcessList.processList:
             i.start(SMALLWEI2016_QQ)
@@ -77,9 +79,11 @@ if __name__ == "__main__":
         for i in range(0, MAX_THREAD_NUM):
             p = Precessor("thread" + str(i))
             p.start()
+            threadList.append(p)
 
-        while True:
-            pass
+        for it in threadList:
+            it.join()
+
     except KeyboardInterrupt as e:
         print "exit...ByeBye........."
         pass

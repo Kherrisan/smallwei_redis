@@ -7,6 +7,7 @@
 from ModuleList import *
 from BaseProcessModule import *
 from Sender import *
+from Logger import log
 
 
 class RemoteTerminalModule(BaseProcessModule):
@@ -17,17 +18,16 @@ class RemoteTerminalModule(BaseProcessModule):
         try:
             content = message.getContent()[:]
             if content and len(content) > 2 and content[0] == "@" and content[1] == u"微":
+                log(moduleName=RemoteTerminalModule.name,content=content)
                 tempList = content[2:].split(":")
                 call, arg = globals()[tempList[0]](), globals()[tempList[1]]  # 这一行是坠吼的，用到了反射。
                 if call(arg):
-                    print "[" + RemoteTerminalModule.name + "][info]" + content
                     message.setContent("[" + call.name + "]" + arg.name)
                     send(message, True)
         except TypeError as e:
             if isinstance(e,Block):
                 raise Block()
-            print "[" + RemoteTerminalModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(moduleName=RemoteTerminalModule.name,level="error",content=e.message)
             return
 
 
@@ -38,8 +38,8 @@ class restart:
     def __call__(self, *args, **kwargs):
         args[0].stop()
         args[0].start()
-        print "[stop]" + args[0].name
-        print "[start]" + args[0].name
+        log(moduleName=RemoteTerminalModule.name,content="[stop]" + args[0].name)
+        log(moduleName=RemoteTerminalModule.name,content="[start]" + args[0].name)
         return True
 
 
@@ -49,7 +49,7 @@ class stop:
 
     def __call__(self, *args, **kwargs):
         args[0].stop()
-        print "[stop]" + args[0].name
+        log(moduleName=RemoteTerminalModule.name,content="[stop]" + args[0].name)
         return True
 
 
@@ -59,7 +59,7 @@ class start:
 
     def __call__(self, *args, **kwargs):
         args[0].start()
-        print "[start]" + args[0].name
+        log(moduleName=RemoteTerminalModule.name,content="[start]" + args[0].name)
         return True
 
 

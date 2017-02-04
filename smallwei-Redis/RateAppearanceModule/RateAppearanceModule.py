@@ -15,6 +15,7 @@ import CQImgReader
 from BaseProcessModule import *
 from RedisSession import redisPool
 from Sender import *
+from Logger import log
 
 redisConnection = redis.Redis(connection_pool=redisPool)
 
@@ -83,7 +84,7 @@ class RateAppearanceModule(BaseProcessModule):
             if type != -1:
                 # if (message.getSubType() == 1 or message.is_at()) and RateAppearanceModule.is_rate_appearance(message):
                 # if RateAppearanceModule.is_rate_appearance(message):
-                print "[" + RateAppearanceModule.name + "]"
+                log(moduleName=RateAppearanceModule.name,content=str(message.getPersonQQ()))
                 redisConnection.hset(REDIS_CONTEXT_CACHE_HASH_NAME, message.get_context_str(),
                                      RateAppearanceModule.CONTEXTS[type])
                 message.setContent(u"{0}是吧，直接发图片給微微好啦~".format(RateAppearanceModule.PROMPTS[type]))
@@ -143,7 +144,7 @@ class RateAppearanceModule(BaseProcessModule):
         except Exception as e:
             if isinstance(e, Block):
                 raise Block()
-            traceback.print_exc()
+            log(moduleName=RateAppearanceModule.name,level="error",content=e.message)
             message.setContent(u"微微出了点问题咧，换张图或者再发一次试试？")
             if message.getSubType() != 1:
                 message.group_at(message.getPersonQQ())

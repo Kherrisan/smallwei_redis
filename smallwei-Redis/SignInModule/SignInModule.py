@@ -11,6 +11,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from BaseProcessModule import *
 from DatabaseSession import Session
 from Sender import *
+from Logger import log
 
 Base = declarative_base()
 
@@ -135,9 +136,9 @@ class SignInModule(BaseProcessModule):
             msg = message.getContent()
             if SignInModule.isSignIn(msg):
                 # 签到口令
-                print "[signin]" + str(message.getPersonQQ())
+                log(moduleName=SignInModule.name,content=str(message.getPersonQQ())+" sign in")
                 if SignInModule.inSuitableTime() == 0:
-                    print "[signin]--TimeWrong" + str(message.getPersonQQ())
+                    log(moduleName=SignInModule.name,content=str(message.getPersonQQ())+" sign in time error")
                     reply = SignInModule.getAt(message) + u"【签到失败】\n只能在6-9点之间签到哦。"
                     message.setContent(reply)
                     send(message, True)
@@ -178,8 +179,7 @@ class SignInModule(BaseProcessModule):
                     query.last_Date = datetime.datetime.fromtimestamp(message.getSendTime()).date()
                     query.last_Time = datetime.datetime.fromtimestamp(message.getSendTime()).time()
                     session.commit()
-
-                    print "[" + SignInModule.name + "]"
+                    log(moduleName=SignInModule.name,content=str(message.getPersonQQ())+" sign in success")
                     reply = SignInModule.SIGNIN_SUCCESS_REPLY.format(SignInModule.URL,
                                                                      query.nickName,
                                                                      SignInModule.SIGNIN_SUCCESS_CONTENT.format(
@@ -191,7 +191,7 @@ class SignInModule(BaseProcessModule):
                     message.setContent(reply)
                     send(message, True)
                 else:  # 如果此人之前未签过到，即数据库无此用户
-                    print "[signin]--unRegister--" + str(message.getPersonQQ())
+                    log(moduleName=SignInModule.name,content=str(message.getPersonQQ())+" not registered")
                     reply = SignInModule.getAt(message) + u"您尚未注册，输入[注册 昵称]即可注册，例: 注册 李云龙 "
                     message.setContent(reply)
                     send(message, True)
@@ -207,8 +207,7 @@ class SignInModule(BaseProcessModule):
         except Exception as e:  #
             if isinstance(e,Block):
                 raise Block()
-            print "[" + SignInModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(moduleName=SignInModule.name,level="error",content=e.message)
             return
         finally:
             session.close()
@@ -232,7 +231,7 @@ class RegisterModule(BaseProcessModule):
             msg = message.getContent()
             if RegisterModule.isRegitser(msg):
                 # 注册口令
-                print "[register]" + str(message.getPersonQQ())
+                log(moduleName=RegisterModule.name,content=str(message.getPersonQQ())+" register")
                 query = session.query(SignInUserModal).filter(
                     SignInUserModal.personQQ == message.getPersonQQ()
                 ).first()
@@ -266,8 +265,7 @@ class RegisterModule(BaseProcessModule):
         except Exception as e:
             if isinstance(e,Block):
                 raise Block()
-            print "[" + RegisterModule.name + "][error]" + e.message
-            traceback.print_exc()
+            log(moduleName=SignInModule.name,level="error",content=e.message)
             return
         finally:
             session.close()
