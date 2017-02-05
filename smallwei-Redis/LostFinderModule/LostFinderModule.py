@@ -503,6 +503,7 @@ class LostFinderModule(BaseProcessModule):
                 redisConnection.hset(REDIS_CONTEXT_CACHE_HASH_NAME, message.get_context_str(), "")
                 session.query(LostRecordModal).filter(isPublished==False, lostPersonQQ==message.getPersonQQ()).delete()
                 session.query(LostRecordModal).filter(isPublished==False, pickPersonQQ==message.getPersonQQ()).delete()
+                session.commit()
                 message.setContent(u"成功取消!")
                 send(message, True)
 
