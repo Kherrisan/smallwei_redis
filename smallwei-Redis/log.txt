@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 108, in process
+    img.save("data\\" + str(message.getSendTime()) + ".jpg")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1725, in save
+    fp = builtins.open(filename, "w+b")
+IOError: [Errno 2] No such file or directory: 'data\\1486303584.jpg'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\TuringRobotModule\TuringRobotModule.py", line 28, in process
+    log(moduleName=TuringRobotModule.name,content=str(message.getContent())+" "+str(message.getPersonQQ()))
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\TuringRobotModule\TuringRobotModule.py", line 28, in process
+    log(moduleName=TuringRobotModule.name,content=str(message.getContent())+" "+str(message.getPersonQQ()))
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-7: ordinal not in range(128)

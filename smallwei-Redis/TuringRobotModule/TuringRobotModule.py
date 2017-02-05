@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 # 图灵机器人的模块。
 
 import json
@@ -25,7 +25,7 @@ class TuringRobotModule(BaseProcessModule):
                     {"key": TURING_KEY, "info": message.getContent(),
                      "uesrid": message.getPersonQQ()}))
                 message.setContent(json.loads(rtn.text)["text"])
-                log(moduleName=TuringRobotModule.name,content=str(message.getContent())+" "+str(message.getPersonQQ()))
+                log(moduleName=TuringRobotModule.name,content=message.getContent()+" "+str(message.getPersonQQ()))
                 send(message, True)
             elif message.getSubType() == 2 or message.getSubType() == 3:  # 如果是群或讨论组消息，则只通过图灵机器人回应at小微的消息。
                 res = re.search(r"^\[CQ:at,qq=([0-9]+)\]", message.getContent())
@@ -35,7 +35,7 @@ class TuringRobotModule(BaseProcessModule):
                          "uesrid": str(message.getGroupQQ())+str(message.getPersonQQ())}))
                     message.setContent("[CQ:at,qq={0}]".format(message.getPersonQQ()) + json.loads(rtn.text)["text"])
                     message.setTargetQQ(int(res.group(1)))
-                    log(moduleName=TuringRobotModule.name,content=str(message.getContent())+" "+str(message.getGroupQQ())+" "+str(message.getPersonQQ()))
+                    log(moduleName=TuringRobotModule.name,content=message.getContent()+" "+str(message.getGroupQQ())+" "+str(message.getPersonQQ()))
                     send(message, True)
                 else:
                     return

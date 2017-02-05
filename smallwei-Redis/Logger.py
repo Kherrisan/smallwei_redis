@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import threading
 import traceback
 
@@ -9,7 +10,7 @@ def log(threadName=None, moduleName=None, level="info", content="process"):
         threadName=threading.currentThread().getName()
     mutex.acquire()
     try:
-        print "[{0}][{1}][{2}]{3}".format(level, moduleName, threadName, content)
+        print u"[{0}][{1}][{2}]{3}".format(level, moduleName, threadName, content)
         if level == "error":
             err=traceback.format_exc()
             print err
@@ -17,6 +18,8 @@ def log(threadName=None, moduleName=None, level="info", content="process"):
             file.write(err)
             file.close()
     except Exception as e:
-        print "[{0}][{1}][{2}]{3}".format("error", "Log", threadName, e.message)
+        print u"[{0}][{1}][{2}]{3}".format("error", "Log", threadName, e.message)
+	err=traceback.format_exc()
+        print err
     finally:
         mutex.release()
