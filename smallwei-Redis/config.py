@@ -8,10 +8,10 @@ DATABASE_CONNECTION_POOL_SIZE = 10  # 数据库连接池的尺寸
 MESSAGE_TABLE_NAME = 'messagelist'  # 消息记录的数据表的表名
 
 REDIS_IN_QUEUE_NAME = "smallwei:in"  # 从cq到py的任务队列的名字。需要和cpp中的一致。
-# SMALLWEI_QQ = 896153878  #
-# SMALLWEI2016_QQ = 459861669  #
-SMALLWEI_QQ = 1368994461  # 大微的qq号。
-SMALLWEI2016_QQ = 2762968041  # 小微2016的qq号。
+SMALLWEI_QQ = 896153878  #
+SMALLWEI2016_QQ = 459861669  #
+# SMALLWEI_QQ = 1368994461  # 大微的qq号。
+# SMALLWEI2016_QQ = 2762968041  # 小微2016的qq号。
 REDIS_OUT_QUEUE_NAME_BIG = "smallweiout:" + str(SMALLWEI_QQ)  # 从py到大微的cq的任务队列的名字，需要和cpp中的一致。
 REDIS_OUT_QUEUE_NAME_2016 = "smallweiout:" + str(SMALLWEI2016_QQ)  # 从py到小微2016的cq的任务队列的名字，需要和cpp中的一致。
 
@@ -30,3 +30,5 @@ BLESSING_TABLE_NAME = "blessings"
 REDIS_BLESSING_WAITING_QUEUE = "blessqueue"
 
 MAX_THREAD_NUM = 10
+
+

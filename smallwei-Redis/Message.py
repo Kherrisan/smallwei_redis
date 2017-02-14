@@ -128,7 +128,7 @@ class Message:
         res = re.search(GROUP_AT_PATTERN, self.getContent())
         if res and res.group(1) == str(self.getTargetQQ()):
             self.setContent(self.getContent()[len(res.group(0)):])
-	    self.setContent(self.getContent().strip())
+            self.setContent(self.getContent().strip())
             self.at = True
         else:
             self.at = False

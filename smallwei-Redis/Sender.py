@@ -25,9 +25,33 @@ class Block(Exception):
     pass
 
 
+REQUEST_ALLOW = 1
+REQUEST_DENY = 2
+
+REQUEST_GROUP_ADD = 1
+REQUEST_GROUP_INVITE = 2
+
+
+def set_friend_add_request(message, responseoperation):
+    raw = message.getContent()
+    index = raw.indexOf("#")
+    raw[index + 1:] = str(responseoperation)
+    message.setContent(raw)
+    send(message, True)
+
+
+def set_group_add_request(message, responseoperation):
+    raw = message.getContent()
+    index = raw.indexOf("#")
+    raw[index + 1:] = responseoperation
+    message.setContent(raw)
+    send(message, True)
+
+
 def send(message, blocked):
-    log(moduleName="Sender",content=message.getJsonStr())
-    redisConnection.rpush(switchoutqueue(message.getTargetQQ()), message.getDataStream())
+    log(moduleName="Sender", content=message.getJsonStr())
+    redisConnection.rpush(switchoutqueue(
+        message.getTargetQQ()), message.getDataStream())
     if blocked:
         raise Block()
     else:
