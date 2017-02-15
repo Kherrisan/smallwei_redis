@@ -23,6 +23,9 @@ REDIS_CONTEXT_CACHE_HASH_NAME = "smallwei:context"
 SIGNIN_RECORDS_TABLE_NAME = 'signin_records'  # 签到记录的数据表的表名。
 SIGNIN_USER_TABLE_NAME = "signin_user"  # 签到功能的用户表的表名。
 
+TREEHOLE_TABLE_NAME = 'treehole'     # 树洞功能的数据表的表名。
+YUNYINGQQ=588694674   #运营群群号
+
 TURING_API_URL = "http://www.tuling123.com/openapi/api"  # 图灵机器人的api
 TURING_KEY = "8a489e57bb34bc5295aaa695ec727122"  # 图灵机器人的key
 
