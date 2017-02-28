@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+﻿# -*- coding:utf-8 -*-
 # 一卡通绑定模块
 from config import *
 from GetInfoFromIni import *
@@ -6,6 +6,12 @@ from BaseProcessModule import *
 from Sender import *
 from Logger import log
 from DatabaseSession import Session
+
+
+from sqlalchemy import *
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 ALL_INFO_TABLE_NAME = "student_info"
 
@@ -37,17 +43,17 @@ class BindCardModule(BaseProcessModule):
         session = Session()
         try:
             if message.getSubType() == 1 or message.getSubType() == 2:
-                message.remove_group_at()
-                content = message.getContent()
+                content = message.getContent().strip()
                 if content[0] == u"绑":
                     cardNo = int(content[1:].strip())
                     student = session.query(StudentInfoModal).filter(
                         StudentInfoModal.cardNo == cardNo).first()
+		    print student is None
                     if not student:
                         message.setContent(u"请检查您的一卡通账号！")
                         if message.getSubType() == 2:
                             message.group_at()
-                        send(message)
+                        send(message,True)
                         return
                     if student.QQ is not None:
                         # 该用户提供的一卡通号已经被注册。
@@ -59,7 +65,7 @@ class BindCardModule(BaseProcessModule):
                             message.setContent(u"请检查您的一卡通账号！")
                         if message.getSubType() == 2:
                             message.group_at()
-                        send(message)
+                        send(message,True)
                         return
                     else:
                         student.QQ = message.getPersonQQ()
@@ -67,7 +73,7 @@ class BindCardModule(BaseProcessModule):
                         message.setContent(u"绑定成功！")
                         if message.getSubType() == 2:
                             message.group_at()
-                        send(message)
+                        send(message,True)
                         return
         except Exception as e:
             if isinstance(e, Block):

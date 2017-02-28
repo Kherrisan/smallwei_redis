@@ -3,6 +3,7 @@ from RedisSession import *
 import redis
 from config import *
 from Logger import log
+from Message import Message
 
 redisConnection = redis.Redis(connection_pool=redisPool)
 
@@ -32,23 +33,34 @@ REQUEST_GROUP_ADD = 1
 REQUEST_GROUP_INVITE = 2
 
 
-def set_friend_add_request(message, responseoperation):
-    raw = message.getContent()
-    index = raw.indexOf("#")
-    raw[index + 1:] = str(responseoperation)
-    message.setContent(raw)
-    send(message, True)
+def set_friend_add_request(message, responseFlag=None, responseOperation=None):
+    if responseFlag:
+        message.setResponseFlag(responseFlag)
+    if responseOperation:
+        message.setContent(str(responseOperation))
+    send(message)
 
 
-def set_group_add_request(message, responseoperation):
-    raw = message.getContent()
-    index = raw.indexOf("#")
-    raw[index + 1:] = responseoperation
-    message.setContent(raw)
-    send(message, True)
+def set_group_add_request(message, responseFlag=None, responseOperation=None):
+    if responseFlag:
+        message.setResponseFlag(responseFlag)
+    if responseOperation:
+        message.setContent(str(responseOperation))
+    send(message)
 
 
-def send(message, blocked):
+def set_group_card(message, groupQQ=None, personQQ=None, newCard=None):
+    message = message[:]
+    message.setSubType(22)
+    if not groupQQ:
+        groupQQ = message.getGroupQQ()
+    if not personQQ:
+        personQQ = message.getPersonQQ()
+    message.setGroupQQ(groupQQ).setPersonQQ(personQQ).setContent(newCard)
+    send(message)
+
+
+def send(message, blocked=False):
     log(moduleName="Sender", content=message.getJsonStr())
     redisConnection.rpush(switchoutqueue(
         message.getTargetQQ()), message.getDataStream())

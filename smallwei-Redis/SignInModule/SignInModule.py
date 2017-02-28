@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 # 签到模块。
 # 目前还没有什么乱用。
 
@@ -153,9 +153,11 @@ class SignInModule(BaseProcessModule):
                 if query:
                     ctnSignIn = query.ctnSignIn
                     if query.last_Date == SignInModule.getToday():
-                        reply = SignInModule.getAt(message) + u"您今天已经签到过了，明天再来试试吧!"
+                        reply = SignInModule.getAt(message) + u"您今天已经签到过啦，明天再来试试吧!可以看看微微给你的私聊~"
                         message.setContent(reply)
-                        send(message, True)
+                        send(message,False)
+                        message.setContent(u"签")
+                        return
                     else:
                         addedScore = SignInModule.getSuitableScore(query.ctnSignIn, scoreType=scoreType)
                         record = SignInRecordModal(
@@ -189,7 +191,9 @@ class SignInModule(BaseProcessModule):
                                                                      SignInModule.USER_LOGO.format(message.getPersonQQ()))
                     # 返回内容
                     message.setContent(reply)
-                    send(message, True)
+                    send(message,False)
+                    message.setContent(u"签")
+                    return
                 else:  # 如果此人之前未签过到，即数据库无此用户
                     log(moduleName=SignInModule.name,content=str(message.getPersonQQ())+" not registered")
                     reply = SignInModule.getAt(message) + u"您尚未注册，输入[注册 昵称]即可注册，例: 注册 李云龙 "

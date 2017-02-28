@@ -120,6 +120,13 @@ class Message:
     def setTargetQQ(self, target):
         self.msgDict["targetQQ"] = target
 
+    def setResponseFlag(self, value):
+        self.msgDict["responseFlag"] = value
+        return self
+
+    def getResponseFlag(self):
+        return self.msgDict["responseFlag"]
+
     def is_at(self):
         return self.at
 
@@ -134,7 +141,7 @@ class Message:
             self.at = False
 
     def group_at(self, atQQ=None):
-        GROUP_AT_CQ = "[CQ:at,qq={0}]"
+        GROUP_AT_CQ = "[CQ:at,qq={0}]\n"
         if atQQ:
             self.setContent(GROUP_AT_CQ.format(atQQ) + self.getContent())
         else:

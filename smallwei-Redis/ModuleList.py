@@ -8,10 +8,13 @@ from NewYearBlessing.NewYearBlessing import SendBlessingModule, ReceiveBlessingM
 from RateAppearanceModule.RateAppearanceModule import RateAppearanceModule
 from SignInModule.SignInModule import SignInModule, RegisterModule
 from TuringRobotModule.TuringRobotModule import TuringRobotModule
-
+from FriendAddRequest.FriendAddRequest import FriendAddRequest
+from GroupAddRequest.GroupAddRequest import GroupAddRequest
+from StudentInfoModule.StudentInfoModule import StudentInfoModule
 
 class ProcessList:
     """封装了一个列表，这个列表定义了RedisProcessor调用哪些模块处理消息，已经处理消息的顺序。越往前的优先级越高。
     """
-    processList = [MessageStoreDBModule, SendBlessingModule, ReceiveBlessingModule, SignInModule,
-                   RateAppearanceModule, RegisterModule, BindCardModule, TuringRobotModule, ]
+    processList = [MessageStoreDBModule, SendBlessingModule, ReceiveBlessingModule, SignInModule,StudentInfoModule,
+                   RateAppearanceModule, RegisterModule, BindCardModule, TuringRobotModule, FriendAddRequest,
+                   GroupAddRequest, ]

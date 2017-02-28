@@ -12,3 +12,949 @@ Traceback (most recent call last):
   File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\TuringRobotModule\TuringRobotModule.py", line 28, in process
     log(moduleName=TuringRobotModule.name,content=str(message.getContent())+" "+str(message.getPersonQQ()))
 UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-7: ordinal not in range(128)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 68, in process
+    send(message)
+TypeError: send() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 82, in process
+    message.remove_group_at()
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\Message.py", line 129, in remove_group_at
+    print res.group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 82, in process
+    message.remove_group_at()
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\Message.py", line 129, in remove_group_at
+    print res.group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 82, in process
+    message.remove_group_at()
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\Message.py", line 129, in remove_group_at
+    print res.group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 82, in process
+    message.remove_group_at()
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\Message.py", line 129, in remove_group_at
+    print res.group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 49, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 49, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 49, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 49, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 49, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5b9a' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5b9a' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 108, in process
+    img.save("data\\" + str(message.getSendTime()) + ".jpg")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1728, in save
+    save_handler(self, fp, filename)
+  File "C:\Python27\lib\site-packages\PIL\JpegImagePlugin.py", line 592, in _save
+    raise IOError("cannot write mode %s as JPEG" % im.mode)
+IOError: cannot write mode P as JPEG
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 108, in process
+    img.save("data\\" + str(message.getSendTime()) + ".jpg")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1728, in save
+    save_handler(self, fp, filename)
+  File "C:\Python27\lib\site-packages\PIL\JpegImagePlugin.py", line 592, in _save
+    raise IOError("cannot write mode %s as JPEG" % im.mode)
+IOError: cannot write mode P as JPEG
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 112, in process
+    args = json.loads(response.text)
+  File "C:\Python27\lib\json\__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 39, in process
+    if message.getSubType() == 1 and ReceiveBlessingModule.isBless(message):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 30, in isBless
+    if message.getContent()[0] == u"福":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 130, in process
+    send(message)
+TypeError: send() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 91, in process
+    tempNo = int(content[3:],strip())
+NameError: global name 'strip' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 101, in process
+    tempMsg = u"尊敬的管理员：\n你所查询的" + student.name + u"同学的信息如下：\n学号：" + student.stuNo + u"\n一卡通：" + student.cardNo + u"\nQQ：" + student.QQ + u"\n院系：" + student.dept + u"\n专业：" + student.major
+TypeError: coercing to Unicode: need string or buffer, int found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 73, in process
+    message.setConetent(u"您已注册过！")
+AttributeError: Message instance has no attribute 'setConetent'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 73, in process
+    message.setConetent(u"您已注册过！")
+AttributeError: Message instance has no attribute 'setConetent'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 101, in process
+    tempMsg = u"尊敬的管理员：\n你所查询的" + student.name + u"同学的信息如下：\n学号：" + student.stuNo + u"\n一卡通：" + student.cardNo + u"\nQQ：" + student.QQ + u"\n院系：" + student.dept + u"\n专业：" + student.major
+TypeError: coercing to Unicode: need string or buffer, int found
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 92, in process
+    tempNo = int(content[3:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 92, in process
+    tempNo = int(content[3:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 124, in process
+    message.setSubType() == 1
+TypeError: setSubType() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 92, in process
+    tempNo = int(content[3:].strip())
+ValueError: invalid literal for int() with base 10: '213161472; select * from qqint where qq=2923400952;'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 92, in process
+    tempNo = int(content[3:].strip())
+ValueError: invalid literal for int() with base 10: '555*'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 77, in process
+    messgae.group_at()
+NameError: global name 'messgae' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 85, in process
+    messgae.group_at()
+NameError: global name 'messgae' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 63, in process
+    cardNo = int(content[2:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-6: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 85, in process
+    messgae.group_at()
+NameError: global name 'messgae' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    message.groupat()
+AttributeError: Message instance has no attribute 'groupat'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    message.groupat()
+AttributeError: Message instance has no attribute 'groupat'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 85, in process
+    messgae.group_at()
+NameError: global name 'messgae' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    message.groupat()
+AttributeError: Message instance has no attribute 'groupat'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = paocaoapi.__main__(student.cardNo)
+NameError: global name 'paocaoapi' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = paocaoapi.__main__(student.cardNo)
+NameError: global name 'paocaoapi' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = paocaoapi.__main__(student.cardNo)
+NameError: global name 'paocaoapi' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = paocaoapi.getpaocao(student.cardNo)
+NameError: global name 'paocaoapi' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = paocaoapi.getpaocao(student.cardNo)
+NameError: global name 'paocaoapi' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = paocaoapi.getpaocao(student.cardNo)
+NameError: global name 'paocaoapi' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = getpaocao(student.cardNo)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 20, in getpaocao
+    Paocao.paocao_init()
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 14, in paocao_init
+    myRequest = urllib2.Request(url = self.loginurl,data = self.postdata)
+AttributeError: seu_paocao instance has no attribute 'loginurl'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = getpaocao(student.cardNo)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 20, in getpaocao
+    Paocao.paocao_init()
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 14, in paocao_init
+    myRequest = urllib2.Request(url = self.loginurl,data = self.postdata)
+AttributeError: seu_paocao instance has no attribute 'loginurl'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = getpaocao(student.cardNo)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 20, in getpaocao
+    Paocao.paocao_init()
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 14, in paocao_init
+    myRequest = urllib2.Request(url = self.loginurl,data = self.postdata)
+AttributeError: seu_paocao instance has no attribute 'loginurl'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 157, in process
+    tempMsg = StudentInfoModule.INFO_REPLY_PAOCAO.format(student.name,num[0],student.QQ)
+TypeError: 'NoneType' object has no attribute '__getitem__'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = getpaocao(student.cardNo)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 20, in getpaocao
+    return num
+NameError: global name 'num' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = getpaocao(student.cardNo)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 20, in getpaocao
+    return self.num
+NameError: global name 'self' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = getpaocao(student.cardNo)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 21, in getpaocao
+    return self.num
+NameError: global name 'self' is not defined
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 156, in process
+    num = getpaocao(student.cardNo)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\paocaoapi.py", line 21, in getpaocao
+    return self.num
+NameError: global name 'self' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 103, in process
+    if not student:
+UnboundLocalError: local variable 'student' referenced before assignment
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 67, in process
+    student_qq = session.query(StudentInfoModal).filter(StudentInfoModal.QQ == message.getPersonQQ).first()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2697, in first
+    ret = list(self[0:1])
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2489, in __getitem__
+    return list(res)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2797, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2820, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "C:\Python27\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\default.py", line 469, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Python27\lib\site-packages\mysql\connector\cursor.py", line 538, in execute
+    stmt, self._process_params_dict(params))
+  File "C:\Python27\lib\site-packages\mysql\connector\cursor.py", line 405, in _process_params_dict
+    "Failed processing pyformat-parameters; %s" % err)
+ProgrammingError: (mysql.connector.errors.ProgrammingError) Failed processing pyformat-parameters; Python 'instancemethod' cannot be converted to a MySQL type [SQL: u'SELECT student_info.id AS student_info_id, student_info.`stuNo` AS `student_info_stuNo`, student_info.`cardNo` AS `student_info_cardNo`, student_info.name AS student_info_name, student_info.dept AS student_info_dept, student_info.major AS student_info_major, student_info.`QQ` AS `student_info_QQ`, student_info.grade AS student_info_grade, student_info.password AS student_info_password \nFROM student_info \nWHERE student_info.`QQ` = %(QQ_1)s \n LIMIT %(param_1)s'] [parameters: {u'param_1': 1, u'QQ_1': <bound method Message.getPersonQQ of <Message.Message instance at 0x035B9E18>>}]
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 66, in process
+    student_qq = session.query(StudentInfoModal).filter(StudentInfoModal.QQ == message.getPersonQQ).first()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2697, in first
+    ret = list(self[0:1])
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2489, in __getitem__
+    return list(res)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2797, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\query.py", line 2820, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "C:\Python27\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\default.py", line 469, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Python27\lib\site-packages\mysql\connector\cursor.py", line 538, in execute
+    stmt, self._process_params_dict(params))
+  File "C:\Python27\lib\site-packages\mysql\connector\cursor.py", line 405, in _process_params_dict
+    "Failed processing pyformat-parameters; %s" % err)
+ProgrammingError: (mysql.connector.errors.ProgrammingError) Failed processing pyformat-parameters; Python 'instancemethod' cannot be converted to a MySQL type [SQL: u'SELECT student_info.id AS student_info_id, student_info.`stuNo` AS `student_info_stuNo`, student_info.`cardNo` AS `student_info_cardNo`, student_info.name AS student_info_name, student_info.dept AS student_info_dept, student_info.major AS student_info_major, student_info.`QQ` AS `student_info_QQ`, student_info.grade AS student_info_grade, student_info.password AS student_info_password \nFROM student_info \nWHERE student_info.`QQ` = %(QQ_1)s \n LIMIT %(param_1)s'] [parameters: {u'param_1': 1, u'QQ_1': <bound method Message.getPersonQQ of <Message.Message instance at 0x03AFADC8>>}]
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 66, in process
+    student_qq = session.query(StudentInfoModal).filter(StudentInfoModal.QQ == int(message.getPersonQQ)).first()
+TypeError: int() argument must be a string or a number, not 'instancemethod'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 66, in process
+    student_qq = session.query(StudentInfoModal).filter(StudentInfoModal.QQ == int(str(message.getPersonQQ))).first()
+ValueError: invalid literal for int() with base 10: '<bound method Message.getPersonQQ of <Message.Message instance at 0x02C69D78>>'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 65, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 65, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: '[CQ:face,id=176][CQ:at,qq=3515873161]'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 65, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 65, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 108, in process
+    img.save("data\\" + str(message.getSendTime()) + ".jpg")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1728, in save
+    save_handler(self, fp, filename)
+  File "C:\Python27\lib\site-packages\PIL\JpegImagePlugin.py", line 592, in _save
+    raise IOError("cannot write mode %s as JPEG" % im.mode)
+IOError: cannot write mode P as JPEG
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 39, in process
+    if message.getSubType() == 1 and ReceiveBlessingModule.isBless(message):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 30, in isBless
+    if message.getContent()[0] == u"福":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 39, in process
+    if message.getSubType() == 1 and ReceiveBlessingModule.isBless(message):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 30, in isBless
+    if message.getContent()[0] == u"福":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 259, in process
+    session.commit()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 874, in commit
+    self.transaction.commit()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 2137, in flush
+    self._flush(objects)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 2257, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Python27\lib\site-packages\sqlalchemy\util\langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 2221, in _flush
+    flush_context.execute()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 548, in execute
+    uow
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "C:\Python27\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\default.py", line 469, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Python27\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Python27\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Python27\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+DataError: (mysql.connector.errors.DataError) 1406 (22001): Data too long for column 'nickName' at row 1 [SQL: u'INSERT INTO signin_user (`personQQ`, `nickName`, `totalSignIn`, `totalScore`, `ctnSignIn`, `last_Date`, `last_Time`) VALUES (%(personQQ)s, %(nickName)s, %(totalSignIn)s, %(totalScore)s, %(ctnSignIn)s, %(last_Date)s, %(last_Time)s)'] [parameters: {'personQQ': 904430781, 'ctnSignIn': 0, 'last_Date': datetime.date(2017, 2, 24), 'totalScore': 0, 'nickName': u'\u8017\u5b50[CQ:emoji,id=128045]', 'last_Time': datetime.time(22, 17, 9, 229000), 'totalSignIn': 0}]
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 65, in process
+    cardNo = int(content[2:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-2: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 65, in process
+    cardNo = int(content[2:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-3: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 22, in process
+    cardNum = int(content)
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-4: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 108, in process
+    img.save("data\\" + str(message.getSendTime()) + ".jpg")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1728, in save
+    save_handler(self, fp, filename)
+  File "C:\Python27\lib\site-packages\PIL\JpegImagePlugin.py", line 592, in _save
+    raise IOError("cannot write mode %s as JPEG" % im.mode)
+IOError: cannot write mode P as JPEG
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 39, in process
+    if message.getSubType() == 1 and ReceiveBlessingModule.isBless(message):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\NewYearBlessing\NewYearBlessing.py", line 30, in isBless
+    if message.getContent()[0] == u"福":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 146, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 148, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 83, in process
+    type = RateAppearanceModule.get_type(message)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 48, in get_type
+    if message.getContent().find(u"测颜值") == 0:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 148, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 83, in process
+    type = RateAppearanceModule.get_type(message)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 48, in get_type
+    if message.getContent().find(u"测颜值") == 0:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 148, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 83, in process
+    type = RateAppearanceModule.get_type(message)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 48, in get_type
+    if message.getContent().find(u"测颜值") == 0:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 148, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content.find(u"签") != -1:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 83, in process
+    type = RateAppearanceModule.get_type(message)
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 48, in get_type
+    if message.getContent().find(u"测颜值") == 0:
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 0: ordinal not in range(128)
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 179, in process
+    date = datetime.date.isoformat()
+TypeError: descriptor 'isoformat' of 'datetime.date' object needs an argument
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 180, in process
+    time = datetime.datetime.hour() + ":" + datetime.datetime.minute() + ":" + datetime.datetime.second()
+TypeError: 'getset_descriptor' object is not callable
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 180, in process
+    time = datetime.datetime.hour + ":" + datetime.datetime.minute + ":" + datetime.datetime.second
+TypeError: unsupported operand type(s) for +: 'getset_descriptor' and 'str'
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 180, in process
+    time = datetime.datetime.ctime()
+TypeError: descriptor 'ctime' of 'datetime.datetime' object needs an argument
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 180, in process
+    time = datetime.datetime.ctime()
+TypeError: descriptor 'ctime' of 'datetime.datetime' object needs an argument
+Traceback (most recent call last):
+  File "c:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 180, in process
+    time = datetime.datetime.now()[11:]
+TypeError: 'datetime.datetime' object has no attribute '__getitem__'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5427' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 150, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 69, in process
+    cardNo = int(content[2:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-4: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-5: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 150, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5b9a' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 149, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\RateAppearanceModule\RateAppearanceModule.py", line 108, in process
+    img.save("data\\" + str(message.getSendTime()) + ".jpg")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1728, in save
+    save_handler(self, fp, filename)
+  File "C:\Python27\lib\site-packages\PIL\JpegImagePlugin.py", line 592, in _save
+    raise IOError("cannot write mode %s as JPEG" % im.mode)
+IOError: cannot write mode P as JPEG
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-10: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-11: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-1: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-2: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5b9a' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 263, in process
+    session.commit()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 874, in commit
+    self.transaction.commit()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 2137, in flush
+    self._flush(objects)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 2257, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Python27\lib\site-packages\sqlalchemy\util\langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\session.py", line 2221, in _flush
+    flush_context.execute()
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 548, in execute
+    uow
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Python27\lib\site-packages\sqlalchemy\orm\persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "C:\Python27\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "C:\Python27\lib\site-packages\sqlalchemy\engine\default.py", line 469, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Python27\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Python27\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Python27\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+DataError: (mysql.connector.errors.DataError) 1406 (22001): Data too long for column 'nickName' at row 1 [SQL: u'INSERT INTO signin_user (`personQQ`, `nickName`, `totalSignIn`, `totalScore`, `ctnSignIn`, `last_Date`, `last_Time`) VALUES (%(personQQ)s, %(nickName)s, %(totalSignIn)s, %(totalScore)s, %(ctnSignIn)s, %(last_Date)s, %(last_Time)s)'] [parameters: {'personQQ': 80000000, 'ctnSignIn': 0, 'last_Date': datetime.date(2017, 2, 27), 'totalScore': 0, 'nickName': u'\u5305\u8d85\u6700\u50bb[CQ:emoji,id=128527]', 'last_Time': datetime.time(0, 38, 13, 290000), 'totalSignIn': 0}]
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5b9a' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: 'CZ0416030109'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5b9a' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5e26' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5e26' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+ValueError: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u5b9a' in position 0: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\FriendAddRequest\FriendAddRequest.py", line 23, in process
+    content=re.search(ur"[0-9]+",content).group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 149, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 149, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 137, in process
+    if SignInModule.isSignIn(msg):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\SignInModule\SignInModule.py", line 94, in isSignIn
+    if msg[0] == u"签":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 149, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 68, in process
+    cardNo = int(content[2:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-2: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 48, in process
+    cardNo = int(content[1:].strip())
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-3: invalid decimal Unicode string
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 149, in process
+    if content[0:3].find(u"课表") != -1 or content[0:3].find(u"跑操") != -1 or content[0].find(u"签") != -1:
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\BindCardModule\BindCardModule.py", line 47, in process
+    if content[0] == u"绑":
+IndexError: string index out of range
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\smallwei-Redis\smallwei_redis\smallwei-Redis\StudentInfoModule\StudentInfoModule.py", line 127, in process
+    if int(tempNo)/1000000 == 213:
+ValueError: invalid literal for int() with base 10: ''
